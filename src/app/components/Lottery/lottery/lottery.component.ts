@@ -17,11 +17,7 @@ import { Lottery } from 'src/app/models/Lottery';
   styleUrls: ['./lottery.component.css']
 })
 export class LotteryComponent {
-
-// ------------------------------------------------------------------------------------------
-
 constructor(public giftService: GiftServiceService,public orderGift:OrderGiftService,private router: Router,public lotterySrevice:LotteryService) { }
-// ------------------------------------------------------------------------------------------
 
 spinner:boolean=false
 spinner2:boolean=false
@@ -36,7 +32,6 @@ allLotterirss:Lottery[]=[];
 orderGiftList:OrderGift[]=[];
 userLottery:OrderGift[]=[];
 lottery:number=-2;
-// ------------------------------------------------------------------------------------------
 
     ngOnInit() {
       const userJSON = localStorage.getItem('user');
@@ -67,7 +62,7 @@ lottery:number=-2;
 
       }
     }
-// ------------------------------------------------------------------------------------------
+
 random(gift: Gift): void {
  
   this.lotterySrevice.roaldLotteries$.subscribe(x => {
@@ -94,14 +89,14 @@ if(this.lottery==-1||this.lottery==-2){
       setTimeout(()=>{this.spinner=false;this.noWinner=true},2000) 
       }}
   }
-// ------------------------------------------------------------------------------------------
+
   close(){
   this.spinner2=false;
     this.show=false;
     this.userWinner="";
     this.noWinner=false
   }
-// ------------------------------------------------------------------------------------------
+
 
   addLottery(gift:Gift,userWinner:User){
    
@@ -118,4 +113,4 @@ this.router.navigate(['LotteryWinners'])
 }
 }
 
-// ------------------------------------------------------------------------------------------
+
